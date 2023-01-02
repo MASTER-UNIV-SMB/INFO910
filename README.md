@@ -5,8 +5,6 @@ Haris Coliche et Clément de Louvencourt
 
 L'objectif du TP est de containeuriser une application avec Docker et Kubernetes.
 
-Dans le cadre de mon TP, j'ai réalisé une application Flask, utilisant Nginx en serveur web. L'application a pour but de renvoyer une image de chat pour chaque code HTTP possible. Pour cela elle fait des appels à l'API https://http.cat/ .
-
 ## Exercice 1 : Docker
 
 Dans le dossier Docker, l'application se divise en deux dossiers, pour les deux images à faire tourner.
