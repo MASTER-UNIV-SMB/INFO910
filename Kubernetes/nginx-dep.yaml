@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+    role: requesthandler
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+      role: requesthandler
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nginx
+        role: requesthandler
+    spec:
+      containers:
+      - name: nginx
+        image: MASTER-UNIV-SMB/info910_nginx
+        resources:
+          limits:
+            memory: "100Mi"
+            cpu: "350m"
+          requests:
+            memory: "20Mi"
+            cpu: "75m"
+        ports:
+        - containerPort: 80

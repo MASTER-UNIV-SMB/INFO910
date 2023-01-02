@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  flask:
+    image: MASTER-UNIV-SMB/info910_flask
+    build:
+      context: flask
+      dockerfile: Dockerfile
+    container_name: info910_flask
+    environment:
+      - APP_NAME=INFO910-Conseils
+    expose:
+      - 8080
+  nginx:
+    image: MASTER-UNIV-SMB/info910_nginx
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    container_name: info910_nginx
+    ports:
+      - "80:80"
