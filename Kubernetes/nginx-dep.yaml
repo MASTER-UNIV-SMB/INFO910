@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: MASTER-UNIV-SMB/info910_nginx
+        image: info910/info910-nginx
         resources:
           limits:
             memory: "100Mi"

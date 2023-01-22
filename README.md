@@ -22,7 +22,7 @@ L'application est ensuite accessible à l'adresse : http://localhost:80
 ## Exercice 2 : Kubernetes
 
 Le dossier Kubernetes contient un service et un deployment pour chacune des deux images. Les deployments permettent de spécifier une image à récupérer pour le deployment, la stratégie de redémarrage, les ressources mémoire et processeurs allouées, les ports à exposer, les variables d'environnement auxquelles doit avoir accès le conteneur, ...
-Les services permettent d'exposer les deployements ayant les mêmes labels qu'eux en tant que services : le service flask est exposé "en interne" pour être accessible par nginx, le service nginx est exposé de façon à être accessible à l'extérieur, en l'occurence sur le port 3000.
+Les services permettent d'exposer les deployements ayant les mêmes labels qu'eux en tant que services : le service api est exposé "en interne" pour être accessible par nginx, le service nginx est exposé de façon à être accessible à l'extérieur, en l'occurence sur le port 3000.
 
 ### Pour lancer l'application (avec Minikube):
 
@@ -30,7 +30,7 @@ L'application se lance via la commande :
 `minkube start`
 
 A la racine du dossier Kubernetes, et on applique les 4 fichiers :
-`kubectl apply -f flask-dep.yaml,flask-svc.yaml,nginx-dep.yaml,nginx-svc.yaml`
+`kubectl apply -f api-dep.yaml,api-svc.yaml,nginx-dep.yaml,nginx-svc.yaml`
 
 L'application est ensuite accessible à l'adresse : http://ADRESSE_KUBERNETTE:3000
 

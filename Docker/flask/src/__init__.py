@@ -1,5 +1,5 @@
 from flask import Flask
 
-app = Flask(__name__)
+src = Flask(__name__)
 
-from app import views
+from src import views

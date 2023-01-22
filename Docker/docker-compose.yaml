@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   flask:
-    image: MASTER-UNIV-SMB/info910_flask
     build:
       context: flask
       dockerfile: Dockerfile
@@ -12,7 +11,6 @@ services:
     expose:
       - 8080
   nginx:
-    image: MASTER-UNIV-SMB/info910_nginx
     build:
       context: nginx
       dockerfile: Dockerfile

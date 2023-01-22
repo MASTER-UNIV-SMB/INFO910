@@ -2,20 +2,22 @@ import random
 import requests
 from flask import render_template
 
-from app import app
+from src import src
 
-@app.route("/")
+@src.route("/")
 def index():
-    return render_template("index.html", codes=CODES)
+    return render_template("index.html")
 
 
-@app.route("/conseil")
+@src.route("/conseil")
 def conseil():
     url = 'https://api.adviceslip.com/advice'
     try:
-        resp = requests.get(url=url)
+        resp = requests.get(url)
         data = resp.json()
+        advice = data['slip']['advice']
+        print(advice)
 
-        return render_template("conseil.html", conseil=data.slip.advice)
+        return render_template("conseil.html", conseil=advice)
     except ValueError:
-        return render_template("unknown.html", codes=CODES, code=code)
+        return render_template("error.html")

@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask
+  name: api
   labels:
     app: chatshttp
     role: front
 spec:
   selector:
     matchLabels:
-      app: flask
+      app: api
       role: front
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: flask
+        app: api
         role: front
     spec:
       containers:
       - name: flask
-        image: MASTER-UNIV-SMB/info910_flask
+        image: info910/info910-api
         resources:
           limits:
             memory: "350Mi"
